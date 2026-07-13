@@ -1,0 +1,26 @@
+class Arithmatic:
+    def Addition(No1, No2):
+        Ans = No1 + No2
+        return Ans
+    
+    # Ret = Addition(Aobj, Value1, Value2)
+
+    def Substraction(No1, No2):
+        Ans = No1 - No2
+        return Ans
+    
+Aobj = Arithmatic()
+
+print("Enter First Number : ")
+Value1 = int(input())
+
+print("Enter Second Number : ")
+Value2 = int(input())
+
+# Ret = Addition(Aobj, Value1, Value2)      TypeError
+
+Ret = Aobj.Addition(Value1, Value2)         # Error 
+print("Addition is : ",Ret)
+
+Ret = Aobj.Substraction(Value1, Value2)     # Error
+print("Substraction is : ",Ret)
