@@ -1,0 +1,67 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def MarvellousPredictor():
+    # Load the Data
+    X = [1,2,3,4,5]
+    Y = [3,4,2,4,5]
+
+    print("Values of Independent variables X :",X)
+    print("Values of Dependent variables Y :",Y)
+
+    sum_x = 0
+    sum_y = 0
+
+    for i in range(len(X)):
+        sum_x = sum_x + X[i]
+        sum_y = sum_y + Y[i]
+
+    mean_x = sum_x / len(X)
+    mean_y = sum_y / len(Y)
+
+    print("Mean_X is : ",mean_x)
+    print("Mean_Y is : ",mean_y)
+
+    n = len(X)  # 5
+
+    numerator = 0
+    denomerator = 0
+
+    # m = Sum(x-xbar) * (Y-ybar) / Sum(X-xbar) **2
+    # Calculate slope ie m
+    for i in range(n):
+        numerator = numerator + ((X[i] - mean_x) * (Y[i] - mean_y)) 
+        denomerator = denomerator + ((X[i] - mean_x)**2)
+
+    m = numerator / denomerator
+
+    print("Slope of line ie m :",m)
+
+    # Y = mx + C
+    # C = y - mx
+    # C = ymean - m * xmean
+
+    C = mean_y - m * mean_x
+
+    print("Y intercept ie C : ",C)
+
+    x = np.linspace(1,6,n)
+    y = C + m * x
+
+    plt.plot(x,y,color = 'g', label = "Regression Line")
+    plt.scatter(X,Y, color = 'r', label = "Scatter plot")
+
+    plt.xlabel("X : Independent Variables")
+    plt.ylabel("Y : Dependent Variables")
+
+    plt.legend()
+    plt.show()
+
+def main():
+    MarvellousPredictor()
+
+
+if __name__ == "__main__":
+    main()
+
