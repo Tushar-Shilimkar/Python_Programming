@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from KNNClassifier import KNeighborsClassifier 
 
 def MarvellousEucDistancce(P1, P2):
     Ans = math.sqrt((P1['X'] - P2['X'])**2 + (P1['Y'] - P2['Y'])**2)

@@ -1,7 +1,7 @@
 import pandas as pd
 
 def main():
-    sobj = pd.Series([27000,32000], index = ["Amit","Sagar","Pooja"])
+    sobj = pd.Series([27000,32000,4000], index = ["Amit","Sagar","Pooja"])
 
     print(sobj)
 
